@@ -1,0 +1,91 @@
+{
+  "Unknown Test Framework": {
+    "coverage": {
+      "/Users/mowalon/Documents/Ruby/homework/enigma/lib/constants.rb": [
+        null,
+        1,
+        1
+      ],
+      "/Users/mowalon/Documents/Ruby/homework/enigma/lib/key_generator.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/mowalon/Documents/Ruby/homework/enigma/lib/encryptor.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        136,
+        1,
+        null,
+        null,
+        1,
+        136,
+        null,
+        null
+      ],
+      "/Users/mowalon/Documents/Ruby/homework/enigma/lib/offset_calculator.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        680,
+        null,
+        null,
+        1,
+        544,
+        null,
+        null,
+        1,
+        544,
+        null,
+        null,
+        1,
+        544,
+        null,
+        null
+      ],
+      "/Users/mowalon/Documents/Ruby/homework/enigma/lib/file_reader.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/mowalon/Documents/Ruby/homework/enigma/lib/file_writer.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1437595505
+  }
+}
