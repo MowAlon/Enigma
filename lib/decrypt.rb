@@ -1,3 +1,5 @@
+require './../test/test_helper'
+
 encrypted_file = ARGV[0]
 decrypted_file = ARGV[1]
 

@@ -1,3 +1,5 @@
+require './../test/test_helper'
+
 action = ARGV[0][0].to_sym
 ACTIONS = [:e, :d, :c]
 input_file = ARGV[1]
@@ -16,8 +18,10 @@ if ACTIONS.include?(action)
       Crypto.new(message_to_convert, offsets).decrypt
     end
   elsif action == :c
+    start_time = Time.now
     offsets = Cracker.new(message_to_convert).cracked_offsets
     converted_message = Crypto.new(message_to_convert, offsets).decrypt
+    puts "Cracked in #{Time.now - start_time} seconds."
   end
   FileWriter.new(output_file).write_file(converted_message)
   Printer.new(converted_message, action, key, date).print
