@@ -15,6 +15,7 @@ class FileWriterTest < Minitest::Test
   end
 
   def test_it_writes_to_filename_given_in_command_line
+    skip
     writer = FileWriter.new
     message = "this is only a test. BAM!"
     writer.write_file(message)
