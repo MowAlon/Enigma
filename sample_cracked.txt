@@ -1,0 +1,7 @@
+This is my file.
+
+It has paragraphs.
+
+And it ends.
+
+..end..

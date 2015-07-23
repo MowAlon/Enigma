@@ -1,7 +1,7 @@
 gem 'minitest', '~> 5.7.0'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './test_helper'
+require './test/test_helper'
 
 class KeyGeneratorTest < Minitest::Test
 
@@ -18,8 +18,14 @@ class KeyGeneratorTest < Minitest::Test
   end
 
   def test_it_can_generate_a_random_key
-    key = KeyGenerator.new
-
+    # Jeff's example below
+    # key = KeyGenerator.new
+    #
+    # results = 5.times.map do
+    #   KeyGenerator.value
+    # end
+    #
+    # assert result.uniq.count > 1
     assert key.value.to_i.between?(0,99999)
   end
 

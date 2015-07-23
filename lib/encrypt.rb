@@ -1,4 +1,12 @@
-require './../test/test_helper'
+#require './../test/test_helper'
+require './lib/constants'
+require './lib/key_generator'
+require './lib/crypto'
+require './lib/offset_calculator'
+require './lib/file_reader'
+require './lib/file_writer'
+require './lib/cracker'
+require './lib/printer'
 
 new_message_file = ARGV[0]
 encrypted_file = ARGV[1]

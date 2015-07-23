@@ -1,13 +1,13 @@
 gem 'minitest', '~> 5.7.0'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './test_helper'
+require './test/test_helper'
 
 
 class FileReaderTest < Minitest::Test
 
   def test_it_returns_the_chomped_text_from_a_file_when_passed_a_filename
-    text = FileReader.new('./../data/simple_message.txt').message
+    text = FileReader.new('./data/simple_message.txt').message
     assert_equal "hello, world...end..", text
   end
 

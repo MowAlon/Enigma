@@ -1,7 +1,7 @@
 gem 'minitest', '~> 5.7.0'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './test_helper'
+require './test/test_helper'
 
 class OffsetCalculatorTest < Minitest::Test
   attr_reader :offset

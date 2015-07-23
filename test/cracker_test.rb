@@ -1,7 +1,7 @@
 gem 'minitest', '~> 5.7.0'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './test_helper'
+require './test/test_helper'
 
 class CrackerTest < Minitest::Test
 
@@ -27,8 +27,8 @@ class CrackerTest < Minitest::Test
   end
 
   def test_it_cracks_a_longish_code
-    decrypted_message = FileReader.new('./../data/decrypted_message.txt').message
-  	message = FileReader.new('./../data/encrypted_message.txt').message
+    decrypted_message = FileReader.new('./data/decrypted_message.txt').message
+  	message = FileReader.new('./data/encrypted_message.txt').message
     offsets = Cracker.new(message).cracked_offsets
     crypto = Crypto.new(message, offsets)
 
