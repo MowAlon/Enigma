@@ -5,21 +5,34 @@ require './test_helper'
 
 class CrackerTest < Minitest::Test
 
-  def test_it_gets_the_correct_shift
+  def test_it_gets_the_correct_shift_amount
     cracker = Cracker.new("characters..end..")
-  	assert_equal 1, cracker.position_shift
+  	assert_equal 2, cracker.position_shift
   end
 
-  def test_it_grabs_the_proper_snippet_with_shift
+  def test_it_snips_the_end_of_the_encrypted_message_with_one_char_per_wheel
     cracker = Cracker.new("hello, world!!")
-    shift = cracker.position_shift
-    assert_equal "orld", cracker.snippet("hello, world!!", shift)
+    assert_equal "rld!!", cracker.snippet("hello, world!!")
+  end
+
+  def test_it_snips_the_end_of_the_known_closing_phrase
+    cracker = Cracker.new("hello, world!!")
+    assert_equal "end..", cracker.snippet(KNOWN_CLOSING)
   end
 
   def test_it_cracks_a_code
-    offsets = Cracker.new("y6lY5a j5FlQOZ.R45.y").cracked_offsets
-    crypto = Crypto.new("y6lY5a j5FlQOZ.R45.y", offsets)
+    offsets = Cracker.new("vAes4Mgpv7z\n4ENsJWEN").cracked_offsets
+    crypto = Crypto.new("vAes4Mgpv7z\n4ENsJWEN", offsets)
     assert_equal "hello, world...end..", crypto.decrypt
+  end
+
+  def test_it_cracks_a_longish_code
+    decrypted_message = FileReader.new('./../data/decrypted_message.txt').message
+  	message = FileReader.new('./../data/encrypted_message.txt').message
+    offsets = Cracker.new(message).cracked_offsets
+    crypto = Crypto.new(message, offsets)
+
+    assert_equal decrypted_message, crypto.decrypt
   end
 
 end

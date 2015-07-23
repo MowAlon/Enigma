@@ -7,6 +7,7 @@ class FileWriter
   def write_file(message)
     file = File.open(@filename, 'w')
     file.write(message)
+    file.close
   end
 
 end

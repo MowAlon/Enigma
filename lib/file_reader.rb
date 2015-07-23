@@ -5,7 +5,7 @@ class FileReader
   end
 
   def message
-    File.read(@filename)
+    File.read(@filename).chomp
   end
 
 end

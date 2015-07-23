@@ -3,7 +3,7 @@ class OffsetCalculator
 
   def initialize(date, key = nil)
     # @date_key = ('072015'.to_i**2).to_s[-4..-1]
-  	@date_offsets = (date.to_i**2).to_s[-4..-1].chars
+  	@date_offsets = (date.to_i**2).to_s[-WHEELS.size..-1].chars
     @key = key
   end
 
@@ -16,7 +16,11 @@ class OffsetCalculator
   end
 
   def key_offset(index)
-  	@key[WHEELS[index]..WHEELS[index] + 1]
+    if index < 4
+    	@key[WHEELS[index]..WHEELS[index] + 1]
+    else
+      @key[0] + @key[WHEELS[index]]
+    end
   end
 
   def date_offset(index)
