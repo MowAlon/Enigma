@@ -1,6 +1,6 @@
 class FileWriter
 
-  def initialize(filename = ARGV[1])
+  def initialize(filename = ARGV[0])
   	@filename = filename
   end
 

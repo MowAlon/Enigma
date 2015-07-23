@@ -11,14 +11,14 @@ class Printer
   def build_output
     if method == :e || method == :d
       if method == :e
-        prefix1 = "Encryption complete using key #{key} and date #{date}."
+        prefix1 = "Encryption complete using 🔑 : #{key} and 📅 : #{date}."
         prefix2 = "Encrypted"
       else
-        prefix1 = "Decryption complete using key #{key} and date #{date}."
+        prefix1 = "Decryption complete using 🔑 : #{key} and 📅 : #{date}."
         prefix2 = "Decrypted"
       end
     else
-      prefix1 = "Cracking complete without any key or date!"
+      prefix1 = "Cracking complete without any 🔑  or 📅 !"
       prefix2 = "Cracked"
     end
     return prefix1, prefix2

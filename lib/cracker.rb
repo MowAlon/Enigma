@@ -1,4 +1,3 @@
-# require './../test/test_helper'
 class Cracker
   attr_reader :encrypted_message
 

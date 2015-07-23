@@ -1,5 +1,3 @@
-require './../test/test_helper'
-
 new_message_file = ARGV[0]
 encrypted_file = ARGV[1]
 
